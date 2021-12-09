@@ -2,10 +2,18 @@ package main
 
 import "fmt"
 
-func changeLocal(num [8]int) {
-	num[0] = 5
-	fmt.Println("Inside Function", num)
+// func changeLocal(num [8]int) {
+// 	num[0] = 5
+// 	fmt.Println("Inside Function", num)
+// }
 
+func printArray(a [3][2]string) {
+	for _, v1 := range a {
+		for _, v2 := range v1 {
+			fmt.Printf("%s ", v2)
+		}
+		fmt.Printf("\n")
+	}
 }
 
 func main() {
@@ -43,10 +51,33 @@ func main() {
 	// fmt.Println("Length of an array is", len(a))
 
 	//*********************Iterating over elements in the array*********************//
-	a := [...]int{1, 2, 3, 4, 5, 6, 7, 8}
+	// a := [...]float64{1, 2, 3, 4, 5, 6, 7, 8}
 
-	for i := 0; i < len(a); i++ {
-		fmt.Printf("%d th element of a is %.2f\n", i, a[i])
+	// for i := 0; i < len(a); i++ {
+	// 	fmt.Printf("%d th element of a is %.2f\n", i, a[i])
+	// }
 
+	// sum := float64(0)
+	// for _, v := range a {
+	// 	fmt.Printf("the element of a is %.2f\n", v)
+	// 	sum += v
+	// }
+	// fmt.Println("\nsum of all elements of a", sum)
+	//////////********************************************Multidimensional array*********************************/////////
+
+	a := [3][2]string{
+		{"lion", "tiger"},
+		{"cat", "dog"},
+		{"pigeon", "peacock"},
 	}
+	printArray(a)
+	var b [3][2]string
+	b[0][0] = "apple"
+	b[0][1] = "samsung"
+	b[1][0] = "microsoft"
+	b[1][1] = "google"
+	b[2][0] = "AT&T"
+	b[2][1] = "T-Mobile"
+	fmt.Printf("\n")
+	printArray(b)
 }
